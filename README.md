@@ -65,7 +65,30 @@ Example:
 
 ## Usage
 
-Run the scripts in the PowerShell environment. Ensure all function scripts are in the same directory as the main script.
+Download this repo and unzip it (for example c:\temp)
+# Navigate to the folder
+Open PowerShell as an administrator.
+Run the cd command provided by the script output to navigate to the extracted folder.
+
+For Example:
+
+```powershell
+cd 'C:\temp'
+```
+
+# Set execution policy to Unrestricted for the current session
+
+```powershell
+Set-ExecutionPolicy Unrestricted -Scope Process -Force
+```
+
+# Unblock all files in the folder
+
+```powershell
+Get-ChildItem | Unblock-File
+```powershell
+
+# Note: At this point, you can execute your scripts or commands in the unblocked environment
 The main script:
 
 ```powershell
