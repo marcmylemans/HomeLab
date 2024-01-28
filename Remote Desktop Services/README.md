@@ -8,7 +8,7 @@ This project automates the setup of Hyper-V virtual machines (VMs), including th
 - PowerShell 5.1 or above.
 - Administrative rights on the Hyper-V host.
 - A sysprepped template VHD created as the base image for all new VMs.
-- An answer file embedded in the VHD with the same username/password as specified in the JSON file for consistent authentication. (https://www.windowsafg.com/)
+- An answer file embedded in the VHD ***with the same username/password*** as specified in the JSON file for consistent authentication. (https://www.windowsafg.com/)
 
 ## Configuration
 Edit the `config.json` file to set up your environment. It should include:
@@ -65,7 +65,30 @@ Example:
 
 ## Usage
 
-Run the scripts in the PowerShell environment. Ensure all function scripts are in the same directory as the main script.
+Download this repo and unzip it (for example c:\temp)
+# Navigate to the folder
+Open PowerShell as an administrator.
+Run the cd command provided by the script output to navigate to the extracted folder.
+
+For Example:
+
+```powershell
+cd 'C:\temp'
+```
+
+# Set execution policy to Unrestricted for the current session
+
+```powershell
+Set-ExecutionPolicy Unrestricted -Scope Process -Force
+```
+
+# Unblock all files in the folder
+
+```powershell
+Get-ChildItem | Unblock-File
+```
+
+# Note: At this point, you can execute your scripts or commands in the unblocked environment
 The main script:
 
 ```powershell
