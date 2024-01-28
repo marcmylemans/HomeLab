@@ -73,7 +73,7 @@ Run the cd command provided by the script output to navigate to the extracted fo
 For Example:
 
 ```powershell
-cd 'C:\temp'
+cd 'C:\HomeLab\Remote Desktop Services'
 ```
 
 # Set execution policy to Unrestricted for the current session
