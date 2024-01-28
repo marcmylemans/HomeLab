@@ -86,7 +86,7 @@ Set-ExecutionPolicy Unrestricted -Scope Process -Force
 
 ```powershell
 Get-ChildItem | Unblock-File
-```powershell
+```
 
 # Note: At this point, you can execute your scripts or commands in the unblocked environment
 The main script:
