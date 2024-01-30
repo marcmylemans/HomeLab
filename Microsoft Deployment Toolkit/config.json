@@ -1,0 +1,25 @@
+{
+    "VMs": [
+        {"Name": "dc1", "IP": "192.168.48.10"},
+        {"Name": "mdt1", "IP": "192.168.48.31"}
+    ],
+    "DomainController": "dc1",
+    "TemplateVHDXPath": "C:\\Hyper-V\\Virtual Hard Disks\\Templates\\template_server2019.vhdx",
+    "VMStoragePath": "C:\\Hyper-V\\Virtual Machines",
+    "VMSwitch": "vSwitch",
+    "DomainName": "homelab.local",
+    "AdminUsername": "Administrator",
+    "AdminPassword": "Azerty123!",
+    "SubnetMask": 24,
+    "Gateway": "192.168.48.254",
+    "DNS": "192.168.48.10",
+    "mdt": {
+        "vmName": "mdt1",
+        "MDTDeploymentShareFolder": "D:\\DeploymentShare",
+        "MDTDeploymentShareName": "DeploymentShare$",
+        "WDSRemoteInstallFolder": "D:\\RemoteInstall",
+        "MDTChocolateyApplications": ["7zip", "adobereader", "googlechrome", "firefox", "javaruntime", "dotnet3.5", "dotnet4.5"],
+        "AdminUsername": "Administrator",
+        "AdminPassword": "YourAdminPassword"
+    }
+}
