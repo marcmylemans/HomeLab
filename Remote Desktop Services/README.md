@@ -102,7 +102,7 @@ Get-ChildItem | Unblock-File
 The main script:
 
 ```powershell
-main.ps1
+.\main.ps1
 ```
 
 ## Main Script
