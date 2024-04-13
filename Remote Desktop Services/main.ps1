@@ -63,7 +63,7 @@ $domainadminCredential = New-Object System.Management.Automation.PSCredential ($
 $domainName = $config.DomainName
 foreach ($vmConfig in $config.VMs) {
     $VMFullName = "$($vmConfig.Name)"
-    New-VMFromTemplate -VMName $VMFullName -TemplateVHDXPath $config.TemplateVHDXPath -VMStoragePath $config.VMStoragePath -VMRAM "4GB" -VMProcessor 2
+    New-VMFromTemplate -VMName $VMFullName -TemplateVHDXPath $config.TemplateVHDXPath -VMStoragePath $config.VMStoragePath -VMRAM "1GB" -VMProcessor 2
     Start-VM -Name $VMFullName
 
     # Wait for VM to become accessible
