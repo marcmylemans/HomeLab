@@ -3,7 +3,7 @@ function New-VMFromTemplate {
         [string]$VMName,
         [string]$TemplateVHDXPath,
         [string]$VMStoragePath,
-        [string]$VMRAM = "4GB",
+        [string]$VMRAM = "1GB",
         [int]$VMProcessor = 2
     )
     # Constructing the path for the new VHDX
