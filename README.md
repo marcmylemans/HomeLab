@@ -70,6 +70,7 @@ Open PowerShell as an administrator.
 ```powershell
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 ```
+Reboot your pc after this command!
 
 ## Usage
 
