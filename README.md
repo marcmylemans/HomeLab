@@ -65,7 +65,8 @@ Example:
 
 ## Usage
 
-Download this repo and unzip it (for example c:\temp)
+Download this repo and unzip it or example to your c:\ drive
+
 # Navigate to the folder
 Open PowerShell as an administrator.
 Run the cd command provided by the script output to navigate to the extracted folder.
@@ -73,7 +74,7 @@ Run the cd command provided by the script output to navigate to the extracted fo
 For Example:
 
 ```powershell
-cd 'C:\HomeLab\Remote Desktop Services'
+cd 'C:\HomeLab-main\Remote Desktop Services'
 ```
 
 # Set execution policy to Unrestricted for the current session
