@@ -102,7 +102,7 @@ Get-ChildItem | Unblock-File
 The main script:
 
 ```powershell
-rds_lab.ps1
+main.ps1
 ```
 
 ## Main Script
