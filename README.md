@@ -63,6 +63,14 @@ Example:
 - Join-Domain.ps1: Joins VMs to the domain.
 - Set-RDSConfiguration.ps1: Configures Remote Desktop Services.
 
+## Installing Hyper-v on Windows 10/11
+
+Open PowerShell as an administrator.
+
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+```
+
 ## Usage
 
 Download this repo and unzip it or example to your c:\ drive
