@@ -9,6 +9,7 @@ This project automates the setup of Hyper-V virtual machines (VMs), including th
 - Administrative rights on the Hyper-V host.
 - A sysprepped template VHD created as the base image for all new VMs.
 - An answer file embedded in the VHD ***with the same username/password*** as specified in the JSON file for consistent authentication. (https://www.windowsafg.com/)
+(A Sample unattend.xml is included in this directory based on the sample json)
 
 ## Configuration
 Edit the `config.json` file to set up your environment. It should include:
