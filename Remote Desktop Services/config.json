@@ -8,7 +8,7 @@
     "DomainController": "dc1",
     "TemplateVHDXPath": "C:\\Hyper-V\\Virtual Hard Disks\\Templates\\template_server2019.vhdx",
     "VMStoragePath": "C:\\Hyper-V\\Virtual Machines",
-    "VMSwitch": "vSwitch",
+    "VMSwitch": "Default Switch",
     "DomainName": "homelab.local",
     "AdminUsername": "Administrator",
     "AdminPassword": "Azerty123!",
