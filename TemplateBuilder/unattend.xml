@@ -1,0 +1,147 @@
+<!--*************************************************
+Windows Server 2016 Answer File Generator
+Created using Windows AFG found at:
+;http://www.windowsafg.com
+
+Installation Notes
+Location: Antwerp
+Notes: Enter your comments here...
+**************************************************-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+<settings pass="windowsPE">
+<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SetupUILanguage>
+<UILanguage>en-US</UILanguage>
+</SetupUILanguage>
+<InputLocale>0c09:00000409</InputLocale>
+<SystemLocale>en-US</SystemLocale>
+<UILanguage>en-US</UILanguage>
+<UILanguageFallback>en-US</UILanguageFallback>
+<UserLocale>en-US</UserLocale>
+</component>
+<component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImageInstall>
+<OSImage>
+<InstallTo>
+<DiskID>0</DiskID>
+<PartitionID>2</PartitionID>
+</InstallTo>
+</OSImage>
+</ImageInstall>
+<UserData>
+<AcceptEula>true</AcceptEula>
+<FullName>administrator</FullName>
+<Organization>HomeLAB</Organization>
+<ProductKey>
+<Key>WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY</Key>
+</ProductKey>
+</UserData>
+<EnableFirewall>true</EnableFirewall>
+<DiskConfiguration>
+<Disk wcm:action="add">
+<CreatePartitions>
+<CreatePartition wcm:action="add">
+<Order>1</Order>
+<Size>350</Size>
+<Type>Primary</Type>
+</CreatePartition>
+<CreatePartition wcm:action="add">
+<Extend>true</Extend>
+<Order>2</Order>
+<Type>Primary</Type>
+</CreatePartition>
+</CreatePartitions>
+<ModifyPartitions>
+<ModifyPartition wcm:action="add">
+<Format>NTFS</Format>
+<Label>System</Label>
+<Order>1</Order>
+<PartitionID>1</PartitionID>
+<TypeID>0x27</TypeID>
+</ModifyPartition>
+<ModifyPartition wcm:action="add">
+<Order>2</Order>
+<PartitionID>2</PartitionID>
+<Letter>C</Letter>
+<Label>OS</Label>
+<Format>NTFS</Format>
+</ModifyPartition>
+</ModifyPartitions>
+<DiskID>0</DiskID>
+<WillWipeDisk>true</WillWipeDisk>
+</Disk>
+</DiskConfiguration>
+</component>
+</settings>
+<settings pass="offlineServicing">
+<component name="Microsoft-Windows-LUA-Settings" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<EnableLUA>false</EnableLUA>
+</component>
+</settings>
+<settings pass="generalize">
+<component name="Microsoft-Windows-Security-SPP" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SkipRearm>1</SkipRearm>
+</component>
+</settings>
+<settings pass="specialize">
+<component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<InputLocale>0813:00000813</InputLocale>
+<SystemLocale>nl-BE</SystemLocale>
+<UILanguage>nl-BE</UILanguage>
+<UILanguageFallback>nl-BE</UILanguageFallback>
+<UserLocale>nl-BE</UserLocale>
+</component>
+<component name="Microsoft-Windows-Security-SPP-UX" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SkipAutoActivation>true</SkipAutoActivation>
+</component>
+<component name="Microsoft-Windows-SQMApi" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<CEIPEnabled>0</CEIPEnabled>
+</component>
+<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ComputerName></ComputerName>
+</component>
+</settings>
+<settings pass="oobeSystem">
+<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<AutoLogon>
+<Password>
+<Value>Azerty123!</Value>
+<PlainText>true</PlainText>
+</Password>
+<Enabled>false</Enabled>
+<Username>administrator</Username>
+</AutoLogon>
+<OOBE>
+<HideEULAPage>true</HideEULAPage>
+<HideLocalAccountScreen>true</HideLocalAccountScreen>
+<HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
+<HideOnlineAccountScreens>true</HideOnlineAccountScreens>
+<HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
+<NetworkLocation>Work</NetworkLocation>
+<ProtectYourPC>2</ProtectYourPC>
+<SkipMachineOOBE>true</SkipMachineOOBE>
+<SkipUserOOBE>true</SkipUserOOBE>
+</OOBE>
+<UserAccounts>
+<AdministratorPassword>
+<Value>Azerty123!</Value>
+<PlainText>true</PlainText>
+</AdministratorPassword>
+<LocalAccounts>
+<LocalAccount wcm:action="add">
+<Description>administrator</Description>
+<DisplayName>administrator</DisplayName>
+<Group>Administrators</Group>
+<Name>administrator</Name>
+</LocalAccount>
+</LocalAccounts>
+</UserAccounts>
+<RegisteredOrganization>HomeLAB</RegisteredOrganization>
+<RegisteredOwner>administrator</RegisteredOwner>
+<DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
+<TimeZone>Romance Standard Time</TimeZone>
+</component>
+</settings>
+</unattend>
