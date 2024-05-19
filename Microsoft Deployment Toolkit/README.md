@@ -1,21 +1,28 @@
 # Hyper-V Automation Project
 
 ## Overview
-This project automates the setup of Hyper-V virtual machines (VMs), including the creation of a domain controller, the configuration of Remote Desktop Services (RDS), and setting up VMs from a template. The project uses PowerShell scripts and a JSON configuration file for customization. Currently, the script requires manual input for 'domain admin' credentials during execution. Post-script completion, users must manually integrate their certificates.
+This function automates the setup of a Microsoft Deployment Toolkit (MDT) environment on a specified Hyper-V virtual machine (VM). The function performs various tasks including setting up MDT, configuring Windows Deployment Services (WDS), and importing necessary drivers and applications using Chocolatey. The setup is customizable through parameters and can be executed remotely on the VM using PowerShell Direct.
 
 ## Prerequisites
-- Windows Server equipped with the Hyper-V role.
+- Hyper-V host with the VM running Windows Server.
 - PowerShell 5.1 or above.
-- Administrative rights on the Hyper-V host.
-- A sysprepped template VHD created as the base image for all new VMs.
-- An answer file embedded in the VHD ***with the same username/password*** as specified in the JSON file for consistent authentication. (https://www.windowsafg.com/)
+- Administrative rights on the VM.
+- Network connectivity to download scripts and software.
+
+## Parameters
+- **VMName**: The name of the Hyper-V virtual machine.
+- **Credential**: PSCredential object for administrative access to the VM.
+- **MDTDeploymentShareFolder**: Path to the MDT deployment share folder on the VM.
+- **MDTDeploymentShareName**: Name of the MDT deployment share.
+- **WDSRemoteInstallFolder**: Path to the WDS remote install folder on the VM.
+
 
 ## Configuration
 Edit the `config.json` file to set up your environment. It should include:
 
 - VM names, IPs.
 - Domain controller configuration.
-- RDS setup details.
+- MDT setup details.
 - VM template paths.
 - Network configurations.
 
@@ -24,32 +31,26 @@ Example:
 {
     "VMs": [
         {"Name": "dc1", "IP": "192.168.48.10"},
-        {"Name": "rdgw", "IP": "192.168.48.11"},
-        {"Name": "rds1", "IP": "192.168.48.12"},
-        {"Name": "rds2", "IP": "192.168.48.13"}
+        {"Name": "mdt1", "IP": "192.168.48.31"}
     ],
     "DomainController": "dc1",
     "TemplateVHDXPath": "C:\\Hyper-V\\Virtual Hard Disks\\Templates\\template_server2019.vhdx",
     "VMStoragePath": "C:\\Hyper-V\\Virtual Machines",
-    "VMSwitch": "vSwitch",
+    "VMSwitch": "Default Switch",
     "DomainName": "homelab.local",
     "AdminUsername": "Administrator",
     "AdminPassword": "Azerty123!",
     "SubnetMask": 24,
     "Gateway": "192.168.48.254",
     "DNS": "192.168.48.10",
-    "RDS": {
-        "connectionBrokerVM": "dc1",
-        "ConnectionBroker": "rdgw.homelab.local",
-        "WebAccessServer": "rdgw.homelab.local",
-        "SessionHost": "rds1.homelab.local",
-        "LicenseServer": "rdgw.homelab.local",
-        "HostRemoteApp": "rds2.homelab.local",
-        "GatewayExternalFqdn": "rdgw.homelab.com",
-        "SessionCollectionName": "RDS Host",
-        "RemoteAppCollectionName": "RDS Remote App",
-        "UserGroupSession": ["homelab\\domain users", "homelab\\domain admins"],
-        "UserGroupRemoteApp": ["homelab\\domain users", "homelab\\domain admins"]
+    "mdt": {
+        "vmName": "mdt1",
+        "MDTDeploymentShareFolder": "D:\\DeploymentShare",
+        "MDTDeploymentShareName": "DeploymentShare$",
+        "WDSRemoteInstallFolder": "D:\\RemoteInstall",
+        "MDTChocolateyApplications": ["7zip", "adobereader", "googlechrome", "firefox", "javaruntime", "dotnet3.5", "dotnet4.5"],
+        "AdminUsername": "Administrator",
+        "AdminPassword": "YourAdminPassword"
     }
 }
 ```
@@ -61,7 +62,7 @@ Example:
 - Set-VMStaticIP.ps1: Sets a static IP for a VM.
 - Setup-DomainController.ps1: Sets up the domain controller.
 - Join-Domain.ps1: Joins VMs to the domain.
-- Set-RDSConfiguration.ps1: Configures Remote Desktop Services.
+- Set-MdtSetupOnVm.ps1: Configures Microsoft Deployment Toolkit and Windows Deployment Server.
 
 ## Usage
 
@@ -73,7 +74,7 @@ Run the cd command provided by the script output to navigate to the extracted fo
 For Example:
 
 ```powershell
-cd 'C:\temp'
+cd 'C:\HomeLab-main\Microsoft Deployment Toolkit'
 ```
 
 # Set execution policy to Unrestricted for the current session
@@ -103,12 +104,11 @@ The main script orchestrates the creation and configuration of VMs:
 2) Sets up network configurations for each VM.
 3) Initializes the domain controller.
 4) Joins VMs to the domain.
-5) Configures RDS settings.
+5) Configures MDT settings.
 
 ## Security
 
 - Credentials: The script uses administrator credentials for several operations. Ensure these are securely managed.
-- Answer File: If using an answer file for automated Windows installations, handle it securely.
 
 ## Testing
 
