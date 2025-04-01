@@ -124,6 +124,17 @@ The main script orchestrates the creation and configuration of VMs:
 
 Test the scripts in a controlled environment before deploying them in a production setting.
 
+## Windows Server Evaluation Download Links
+
+Server 2019:
+[Windows Server 2019 | Microsoft Evaluation Center](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019?msockid=29aa029309de6b970bc3172f08966a60)
+
+Server 2022:
+[Windows Server 2022 | Microsoft Evaluation Center](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022)
+
+Server 2025:
+[Windows Server 2025 | Microsoft Evaluation Center](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2025)
+
 ## License
 
 MIT License
