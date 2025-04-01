@@ -6,7 +6,7 @@
         {"Name": "rds2", "IP": "192.168.48.13"}
     ],
     "DomainController": "dc1",
-    "TemplateVHDXPath": "C:\\Hyper-V\\Virtual Hard Disks\\Templates\\template_server2019.vhdx",
+    "TemplateVHDXPath": "C:\\HyperV\\Templates\\WindowsServer2022Template.vhdx",
     "VMStoragePath": "C:\\Hyper-V\\Virtual Machines",
     "VMSwitch": "Default Switch",
     "DomainName": "homelab.local",
