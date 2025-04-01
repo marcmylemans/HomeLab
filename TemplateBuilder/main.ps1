@@ -17,8 +17,8 @@
 $ErrorActionPreference = 'silentlycontinue'
 
 #-----------------------------Variables----------------------------------
-$isoPath = "D:\ISO\SW_DVD9_Win_Server_STD_CORE_2022_2108.7_64Bit_English_DC_STD_MLF_X23-09508.ISO"
-$vhdPath = "D:\HyperV\Templates\WindowsServer2022Template.vhdx"
+$isoPath = "C:\ISO\SW_DVD9_Win_Server_STD_CORE_2022_2108.7_64Bit_English_DC_STD_MLF_X23-09508.ISO"
+$vhdPath = "C:\HyperV\Templates\WindowsServer2022Template.vhdx"
 $unattendPath = "C:\HomeLab-main\TemplateBuilder\Unattend.xml"
 $Edition = "Windows Server 2022 Standard (Desktop Experience)"
 
