@@ -1,0 +1,15 @@
+# Windows-specific
+Thumbs.db
+Desktop.ini
+
+# PowerShell
+*.ps1~
+*.psm1~
+*.log
+
+# Configs & Secrets
+config/*.xml
+config/*.json
+
+# VSCode
+.vscode/
